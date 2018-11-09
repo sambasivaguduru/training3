@@ -1,0 +1,42 @@
+
+Scenario 1:
+
+Menu driven CRUD operations for postgres
+
+Create database in postrgres and create a table volume with below colums.
+
+id, Zone, Cluster, aggregate, svm, name, size,exports(coma separated ip addresses)
+
+Show the below menu to the user:
+
+DB Operations:
+	1. Insert
+	2. Update
+	3. Browse
+	4. delete
+	5. quit
+
+Enter an option:
+If the user enters q: say thankyou and go out from the program
+if the user enters 1: take total information which is required to insert the row and inert the row in to table.
+if the user enters 2: take an id to update and show the total row belongs to that id.
+                     Ask the user whether he want to udpate or not. 
+                     if yes ask him what are the columns wat to update. take that data and update in to database.
+                   3. take an id, if he dont eveter enything then show all the rows in the table.
+                   4. take an id to delete and show the total row belongs to that id.
+                     Ask the user whether he want to delete or not.  if yes delete it
+NOTE:
+For all the above operations show the success/error messages
+Use exceptions and logging wherver it required.
+provide validations for size, name, exports
+
+scenario 2)
+
+Write a client server program to provide search from the file/database(Use above Volumes table if you want to use DB/
+Or take a data from the table and copy in to .CSV file manually and use that as an input.).
+
+client will send the search information, sever will send the rows of data in the response.
+
+Use sqlite3 to track each and every client request and response information.
+
+Every request should handle by one thread.
