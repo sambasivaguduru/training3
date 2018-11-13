@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.http import HttpResponse
-from volumes.views import fun
+from volumes.views import fun, Service
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-     url(r'^volumes/', volumes.views.fun),
-     url(r'^filesystems/', volumes.views.filesystems_view),
+     url(r'^volumes/', fun),
+     url(r'^service/', Service.as_view()) 
 ]

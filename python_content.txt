@@ -1,17 +1,18 @@
-Copleted topics
+Completed topics
 1) python memory management, Garbage collector
 2) for else block
 3) sample programs for functions to undrstand generator,closure and decorator concepts. 
     Understanding of local and global scopes
 4) basic issues in predefined fuctions of list, dictionary, string, set.
 5) File as a module and folder as module
-7) threading,  thread synchronization using lock and join to solve the critical section problem.
-8) socket programing to develop the client server interactions.
-9) OOPS review. Explained the need of databinding and inheritance and encapsulation and polymorphism.
-10) Django architecture to understand the basic request and response flow.
+6) threading,  thread synchronization using lock and join to solve the critical section problem.
+7) socket programing to develop the client server interactions.
+8) OOPS review. Explained the need of databinding and inheritance and encapsulation and polymorphism.
+9) Django architecture to understand the basic request and response flow.
 
 Pending topics:
-6) database and file interactions
-7) django models 
-8) django restframework.
+10) exceptions
+11) database and file interactions
+12) django models 
+13) django restframework.
 
