@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.http import HttpResponse
-from volumes.views import fun, Service
+from volumes.views import fun, Service, ClusterAPI
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
      url(r'^volumes/', fun),
-     url(r'^service/', Service.as_view()) 
+     url(r'^service/', Service.as_view()) ,
+     url(r'^clusters/$', ClusterAPI.as_view()),
+     url(r'^clusters/(?P<cluster_id>[0-9]+)', ClusterAPI.as_view()),
 ]

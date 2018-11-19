@@ -1,2 +1,3 @@
 1) create 4 projects with minimum 2 apps  per each project. create minimu 2 models in each app and migrate in to db. for each table insert 10 records using shell.
-2) for proj1 create remaining models and insert the records into db using shell.
+2) for proj1 create remaining models and insert the bulk records into db using shell.
+
