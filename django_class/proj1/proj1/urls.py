@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.http import HttpResponse
-from volumes.views import fun, Service, ClusterAPI
+from volumes.views import fun, Service, ClusterAPI, ProtocolAPI
 
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
      url(r'^service/', Service.as_view()) ,
      url(r'^clusters/$', ClusterAPI.as_view()),
      url(r'^clusters/(?P<cluster_id>[0-9]+)', ClusterAPI.as_view()),
+     url(r'^protocols/', ProtocolAPI.as_view()),
 ]

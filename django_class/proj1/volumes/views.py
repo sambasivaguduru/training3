@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from volumes.models import Cluster
 from rest_framework import status
 from serializers import ClusterSerializer
+from volumes.models import Protocol
+from rest_framework import authentication, permissions
 
 # Create your views here.
 
@@ -15,18 +17,30 @@ from serializers import ClusterSerializer
 def fun(a):
     return HttpResponse("hello firefox!!")
 
-resp = {"status":"","errors":"","data":""}
+class ProtocolAPI(APIView):
+    authentication_classes = ()
+    permission_classes = ()
+    def post(self, format=None):
+        data = self.request.data
+        p = Protocol(name=data["name"])
+        p.save()
+        return Response("protocol created successfully!!")
+
+
 
 class ClusterAPI(APIView):
+    authentication_classes = (authentication.TokenAuthentication,)
+    permission_classes = (permissions.IsAuthenticated,)
+    resp = {"status":"","errors":"","data":""}
     def post(self, format=None):
         ser = ClusterSerializer(data=self.request.data)
         if ser.is_valid():
             ser.save()
-            resp.update({
+            self.resp.update({
                 "status":"success",
                 "data":ser.data,
                 })
-            return Response(resp)
+            return Response(self.resp)
         else:
             error = ser._errors
             resp.update({
@@ -62,6 +76,7 @@ class ClusterAPI(APIView):
         #                  "password": row.password,
         #                  "ip": row.ip} for row in data]
         return Response(ser.data)
+
     def delete(self,  format=None, cluster_id=None):
     	if not cluster_id:
     		return Response("cluster id mandatory!!", 
